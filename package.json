@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hontas/lighthouse-influx-grafana#readme",
   "dependencies": {
-    "lighthouse": "^2.9.0"
+    "lighthouse": "^2.9.0",
+    "lighthouse-logger": "^1.0.1"
   }
 }

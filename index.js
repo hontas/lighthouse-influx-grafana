@@ -1,6 +1,7 @@
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 const perfConfig = require('lighthouse/lighthouse-core/config/perf.json');
+const log = require('lighthouse-logger');
 
 function launchChromeAndRunLighthouse(url, opts = {}) {
   return chromeLauncher.launch({chromeFlags: opts.chromeFlags}).then(chrome => {
@@ -11,8 +12,10 @@ function launchChromeAndRunLighthouse(url, opts = {}) {
 }
 
 const opts = {
+  logLevel: 'info',
   chromeFlags: ['--headless']
 };
+log.setLevel(opts.logLevel);
 
 // Usage:
 launchChromeAndRunLighthouse('https://hontas.github.io/tajmr/', opts).then(results => {
